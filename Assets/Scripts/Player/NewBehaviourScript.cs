@@ -38,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        if(grounded)
+        if (grounded)
             doubleJump = false;
         anim.SetBool("Ground", grounded);
         anim.SetFloat("vSpeed", body2D.velocity.y);
@@ -59,32 +59,26 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        if(grounded)
+        if (grounded)
         {
-            jumpForce=1000f;
+            jumpForce = 1000f;
         }
-        if(!grounded)
+        if (!grounded)
         {
-            jumpForce=700f;
+            jumpForce = 700f;
         }
-        if ((grounded  || !doubleJump) && Input.GetKeyDown(KeyCode.Space))
+        if ((grounded || !doubleJump) && Input.GetKeyDown(KeyCode.Space))
         {
             // jumpForce =1000f;
             anim.SetBool("Ground", false);
             body2D.AddForce(new Vector2(0, jumpForce));
             // jumpForce=500f;
-
-            if(!doubleJump && !grounded)
+            if (!doubleJump && !grounded)
                 doubleJump = true;
-                
         }
-        if(Input.GetButtonDown("Attack"))
+        if (Input.GetButtonDown("Attack"))
         {
-            if(!attacked)
-            {
-                anim.SetBool("Attack", true);
-                attacked = true;
-            }
+            anim.SetTrigger("Attack");
         }
     }
     void Flip()
