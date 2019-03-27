@@ -6,6 +6,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public float maxSpeed = 10f;
+    public int meleeDamage = 1;
+    public bool attacked = false;
 
     public Rigidbody2D body2D;
     bool facingRight = true;
@@ -75,6 +77,14 @@ public class NewBehaviourScript : MonoBehaviour
             if(!doubleJump && !grounded)
                 doubleJump = true;
                 
+        }
+        if(Input.GetButtonDown("Attack"))
+        {
+            if(!attacked)
+            {
+                anim.SetBool("Attack", true);
+                attacked = true;
+            }
         }
     }
     void Flip()

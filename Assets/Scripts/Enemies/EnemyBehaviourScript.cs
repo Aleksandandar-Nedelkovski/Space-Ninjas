@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviourScript : MonoBehaviour
 {
+    public int Health;
     public Animator anim;
     void Start()
     {
@@ -14,5 +15,14 @@ public class EnemyBehaviourScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void TakeDamage()
+    {
+        Health -= 1;
+        if(Health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

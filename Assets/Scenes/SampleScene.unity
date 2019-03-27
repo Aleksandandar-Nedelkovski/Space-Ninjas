@@ -4378,6 +4378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
+  meleeDamage: 1
+  attacked: 0
   body2D: {fileID: 0}
   groundCheck: {fileID: 1818184755}
   whatIsGround:
@@ -28429,16 +28431,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 721237048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d82d2a610e2f46b4bec78e0c39cbb9a, type: 3}
+  m_Script: {fileID: 11500000, guid: d709115bf4b0d437b92f19f753b635d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
-  body2D: {fileID: 0}
-  groundCheck: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  jumpForce: 1000
+  Health: 0
+  anim: {fileID: 0}
 --- !u!1 &727822069
 GameObject:
   m_ObjectHideFlags: 0
