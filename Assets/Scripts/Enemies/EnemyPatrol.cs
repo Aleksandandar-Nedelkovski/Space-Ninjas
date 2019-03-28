@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public float speed;
+    public float speed = 7.0f;
     private bool movingRight = true;
     public Transform groundDetection;
     void Update()
