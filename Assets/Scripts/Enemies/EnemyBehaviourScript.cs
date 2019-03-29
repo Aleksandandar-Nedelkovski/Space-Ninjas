@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class EnemyBehaviourScript : MonoBehaviour
 {
-    // public int Health;
-    // public Animator anim;
+    public int health;
+    public Animator anim;
     public LayerMask enemyMask;
     Rigidbody2D myBody;
     Transform myTrans;
     float myWidth;
     public float speed = 1;
+
+    public GameObject bloodEffect;
     void Start()
     {
         //anim = GetComponent<Animator>();
         myTrans = this.transform;
         myBody = this.GetComponent<Rigidbody2D>();
         myWidth = this.GetComponent<SpriteRenderer>().bounds.extents.x;
+    }
+
+    void Update(){
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 
     // Update is called once per frame
@@ -38,12 +48,11 @@ public class EnemyBehaviourScript : MonoBehaviour
         // myBody.velocity =myVel;
     }
 
-    // void TakeDamage()
-    // {
-    //     Health -= 1;
-    //     if(Health == 0)
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
+    public void TakeDamage(int damage)
+    {
+        // Instantiate(bloodEffect, tansform.position, Quaternion.identity);
+        health -= damage;
+        Debug.Log("Damage taken");
+        // health -= 1;
+    }
 }
