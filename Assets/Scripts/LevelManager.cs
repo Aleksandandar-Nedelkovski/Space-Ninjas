@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     public void RespawnPlayer()
     
     {
+        player.health -=1;
         Debug.Log("Player respawn");
         player.transform.position = currentCheckPoint.transform.position;
     }

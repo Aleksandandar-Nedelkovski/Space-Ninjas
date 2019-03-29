@@ -6,8 +6,11 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public float maxSpeed = 10f;
+
     public int meleeDamage = 1;
     public bool attacked = false;
+
+    public int health = 5;
 
     public Rigidbody2D body2D;
     bool facingRight = true;
@@ -22,6 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
     public LayerMask whatIsGround;
     public float jumpForce = 1000f;
     bool doubleJump = false;
+
 
     void Start()
     {
@@ -66,6 +70,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (!grounded)
         {
             jumpForce = 700f;
+            
         }
         if ((grounded || !doubleJump) && Input.GetKeyDown(KeyCode.Space))
         {
