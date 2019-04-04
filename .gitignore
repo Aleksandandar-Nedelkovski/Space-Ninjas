@@ -54,3 +54,8 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+
+# music ignore
+/Music
+music.meta
